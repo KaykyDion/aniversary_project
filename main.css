@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #c8d6e5;
+  color: #222f3e;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.main__profile {
+  text-align: center;
+}
+
+.main__profile__picture {
+  margin-top: 20px;
+  border-radius: 50%;
+  height: 500px;
+}
+
+.main__aniversary-infos {
+  text-align: center;
+}
+
+.main__aniversary-infos__date {
+  padding: 5px;
+  color: #c8d6e5;
+  background-color: #222f3e;
+  box-shadow: 0 0 20px #5f27cd;
+}
+
+.text-big {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .main__profile__picture {
+    height: 300px;
+  }
+
+  .text-big {
+    font-size: 30px;
+  }
+}
