@@ -2,10 +2,15 @@ const aniversaryDate = new Date("Jun 02, 2024 00:00:00");
 let aniversryTimeStamp = aniversaryDate.getTime();
 
 const calculateTime = setInterval(() => {
-  const now = new Date("Jun 03, 2024 12:00:00");
+  const now = new Date();
   const nowTimeStamp = now.getTime();
 
   const distanceToAniversary = aniversryTimeStamp - nowTimeStamp;
+
+  if (distanceToAniversary < 0) {
+    aniversaryDate.setFullYear(aniversaryDate.getFullYear() + 1);
+    aniversryTimeStamp = aniversaryDate.getTime();
+  }
 
   const dayInMs = 1000 * 60 * 60 * 24;
   const hoursInMs = 1000 * 60 * 60;
@@ -28,9 +33,4 @@ const calculateTime = setInterval(() => {
   document.getElementById(
     "aniversary-date"
   ).innerText = `${daysUntilBirthday}d ${hoursUntilBirthday}h ${minutesUntilBirthday}m ${secondsUntilBirthday}s`;
-
-  if (distanceToAniversary < 0) {
-    aniversaryDate.setFullYear(aniversaryDate.getFullYear() + 1);
-    aniversryTimeStamp = aniversaryDate.getTime();
-  }
 }, 1000);
